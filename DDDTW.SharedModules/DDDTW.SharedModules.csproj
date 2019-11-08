@@ -2,10 +2,16 @@
 
   <PropertyGroup>
     <PackageId>DDDTW.SharedModules</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.2</Version>
     <Authors>DDDTW</Authors>
     <Company>DDDTW</Company>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageDescription>This is made by DDD community in Taiwan. In this package, we create a lot of class and interface, they are related DDD.</PackageDescription>
+    <RepositoryUrl>https://github.com/ddd-tw/DDDTW.SharedModules.CSharp</RepositoryUrl>
+    <Copyright>© DDDTW., All rights reserved.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>DDD;Shared module</PackageTags>
+    <PackageReleaseNotes>DaMuSe asks me to use .net standard 2.0</PackageReleaseNotes>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
