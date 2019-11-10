@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using DDDTW.SharedModules.Interfaces;
 
 namespace DDDTW.SharedModules.BaseClasses
 {
     public abstract class Entity<TId> : IEqualityComparer<Entity<TId>>
-        where TId : EntityId
+        where TId : IEntityId
     {
         public TId Id { get; protected set; }
 
@@ -19,7 +20,7 @@ namespace DDDTW.SharedModules.BaseClasses
 
             if (this.Self.GetType() != other.Self.GetType()) return false;
 
-            return this.Id == other.Id;
+            return this.Id.Equals(other.Id);
         }
 
         public override int GetHashCode()

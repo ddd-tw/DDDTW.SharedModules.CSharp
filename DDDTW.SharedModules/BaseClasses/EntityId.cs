@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using DDDTW.SharedModules.Interfaces;
 
 namespace DDDTW.SharedModules.BaseClasses
 {
-    public abstract class EntityId : PropertyComparer<EntityId>
+    public abstract class EntityId : PropertyComparer<EntityId>, IEntityId
     {
         #region Constructors
 

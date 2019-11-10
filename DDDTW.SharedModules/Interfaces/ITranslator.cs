@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DDDTW.SharedModules.Interfaces
+﻿namespace DDDTW.SharedModules.Interfaces
 {
-    class ITranslator
+    public interface ITranslator<Tdm, Trm>
     {
+        Tdm Translate(Trm input);
+
+        Trm TranslateReverse(Tdm output);
     }
 }

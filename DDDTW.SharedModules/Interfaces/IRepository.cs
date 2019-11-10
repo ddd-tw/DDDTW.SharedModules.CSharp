@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using DDDTW.SharedModules.BaseClasses;
 
 namespace DDDTW.SharedModules.Interfaces
 {
     public interface IRepository<Tpo, Tdm, Tid>
-        where Tpo : class, IPersistentObject
+        where Tpo : class, IPersistentObject<Tid>
         where Tid : EntityId
         where Tdm : AggregateRoot<Tid>
     {
-        Tid GenerateId();
-
         ValueTask<IEnumerable<Tresult>> Get<Tresult>(
             Expression<Func<Tpo, Tresult>> selector = null,
             Expression<Func<Tpo, bool>> predicate = null,
             int pageNo = 1, int pageSize = 10)
             where Tresult : class, new();
 
-        Task<long> Count(Expression<Func<Tpo, bool>> predicate = null);
+        ValueTask<long> Count(Expression<Func<Tpo, bool>> predicate = null);
 
         ValueTask<Tresult> GetBy<Tresult>(
             Expression<Func<Tpo, Tresult>> selector = null,
@@ -29,10 +26,10 @@ namespace DDDTW.SharedModules.Interfaces
 
         ValueTask<Tdm> GetBy(Expression<Func<Tpo, bool>> predicate = null);
 
-        Task<bool> Any(Expression<Func<Tpo, bool>> predicate = null);
+        ValueTask<bool> Any(Expression<Func<Tpo, bool>> predicate = null);
 
-        ValueTask<int> SaveChanges(Tdm domainModel);
+        Task SaveChanges(Tdm domainModel);
 
-        Task<int> Delete(Tdm domainModel);
+        Task Remove(Tdm domainModel);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace DDDTW.SharedModules.Interfaces
 {
-    public interface IPersistentObject<TId>
+    public interface IEntity<TId>
         where TId : EntityId
     {
         TId Id { get; }
