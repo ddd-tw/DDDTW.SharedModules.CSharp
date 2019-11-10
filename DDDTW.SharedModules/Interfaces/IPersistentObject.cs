@@ -1,9 +1,7 @@
-﻿using DDDTW.SharedModules.BaseClasses;
-
-namespace DDDTW.SharedModules.Interfaces
+﻿namespace DDDTW.SharedModules.Interfaces
 {
     public interface IPersistentObject<TId>
-        where TId : EntityId
+        where TId : IEntityId
     {
         TId Id { get; }
     }

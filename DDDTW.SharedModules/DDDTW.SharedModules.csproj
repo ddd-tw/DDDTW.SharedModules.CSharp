@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>DDDTW.SharedModules</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>DDDTW</Authors>
     <Company>DDDTW</Company>
     <PackageDescription>This is made by DDD community in Taiwan. In this package, we create a lot of class and interface, they are related DDD.</PackageDescription>

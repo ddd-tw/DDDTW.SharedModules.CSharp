@@ -8,8 +8,8 @@ namespace DDDTW.SharedModules.Interfaces
 {
     public interface IRepository<Tpo, Tdm, Tid>
         where Tpo : class, IPersistentObject<Tid>
-        where Tid : EntityId
-        where Tdm : AggregateRoot<Tid>
+        where Tid : IEntityId
+        where Tdm : AggregateRoot<Tid>, IPersistentObject<Tid>
     {
         ValueTask<IEnumerable<Tresult>> Get<Tresult>(
             Expression<Func<Tpo, Tresult>> selector = null,
