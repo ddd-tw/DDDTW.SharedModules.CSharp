@@ -27,9 +27,9 @@ namespace DDDTW.SharedModules.BaseClasses
 
         public string Abbr { get; private set; }
 
-        public long SeqNo { get; set; }
+        public long SeqNo { get; private set; }
 
-        public DateTimeOffset? OccuredDate { get; set; }
+        public DateTimeOffset? OccuredDate { get; private set; }
 
         #endregion Properties
 
